@@ -1,8 +1,23 @@
-import Vue from 'vue'
-import App from './App.vue'
+import { init } from 'dochubcore'
+import 'dochubcore/dist/dochubcore.css'
 
-Vue.config.productionTip = false
+const app = await init(process.env)
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+document.addEventListener('DOMContentLoaded', async () => {
+  const {
+    Vue,
+    Root,
+    router,
+    vuetify,
+    store
+  } = await app
+
+  new Vue({
+    router,
+    render(createElement) {
+      return createElement(Root)
+    },
+    vuetify,
+    store,
+  }).$mount('#app')
+})
