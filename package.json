@@ -5,14 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "backend-build": "npm run build",
+    "backend-up": "node ./backend/src/main.mjs",
+    "backend": "npm run build && npm run backend-up"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "dochubcore": "^1.0.6",
     "vue": "^2.6.14",
-    "vuetify": "2.6.14",
-    "vue-router": "3.6.5"
+    "vue-router": "3.6.5",
+    "vuetify": "2.6.14"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -20,8 +23,10 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "cors": "^2.8.5",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "md5": "^2.3.0",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
