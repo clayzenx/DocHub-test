@@ -1,4 +1,4 @@
-import { init } from 'dochubcore'
+import { init } from '../../DocHub/dist/dochub.js'
 import 'dochubcore/dist/dochubcore.css'
 
 const app = await init(process.env)
